@@ -26,7 +26,13 @@ class Animal {
 }
 class Leon extends Animal {
     constructor(nombre, edad, img, comentarios, sonido) {
+        //super(nombre, edad, img, comentarios, sonido)
         super(nombre, edad, img, comentarios, sonido)
+
+
+    }
+    setComentarios() {
+        return this.comentarios
     }
     rugir() {
         //aqui se debiera reproducir el audio rugir del León
