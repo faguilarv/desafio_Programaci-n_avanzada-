@@ -31,7 +31,7 @@ class Leon extends Animal {
 
 
     }
-    setComentarios() {
+    getComentarios() {
         return this.comentarios
     }
     rugir() {
@@ -42,6 +42,9 @@ class Lobo extends Animal {
     constructor(nombre, edad, img, comentarios, sonido) {
         super(nombre, edad, img, comentarios, sonido)
     }
+    getComentarios() {
+        return this.comentarios
+    }
     aullar() {
         //aqui se debiera reproducir el audio aullar del lobo
     }
@@ -49,6 +52,9 @@ class Lobo extends Animal {
 class Oso extends Animal {
     constructor(nombre, edad, img, comentarios, sonido) {
         super(nombre, edad, img, comentarios, sonido)
+    }
+    getComentarios() {
+        return this.comentarios
     }
     gruñir() {
 
@@ -58,6 +64,9 @@ class Serpiente extends Animal {
     constructor(nombre, edad, img, comentarios, sonido) {
         super(nombre, edad, img, comentarios, sonido)
     }
+    getComentarios() {
+        return this.comentarios
+    }
     sisear() {
 
     }
@@ -65,6 +74,9 @@ class Serpiente extends Animal {
 class Aguila extends Animal {
     constructor(nombre, edad, img, comentarios, sonido) {
         super(nombre, edad, img, comentarios, sonido)
+    }
+    getComentarios() {
+        return this.comentarios
     }
     chillar() {
 

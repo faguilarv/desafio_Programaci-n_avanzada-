@@ -104,7 +104,7 @@ import { obtenerImagenes } from './datos.js';
         const img = document.createElement('img')
         img.src = animal.getImg()
         img.classList.add('card-img-top')
-        img.addEventListener('click', () => mostrarDetalleAnimal(animal))
+        img.addEventListener('click', () => mostrarDetalleAnimal(animal, animal.getImg()))
 
         const cardBodyDiv = document.createElement('div')
         cardBodyDiv.classList.add('card-body')
@@ -125,16 +125,14 @@ import { obtenerImagenes } from './datos.js';
         animalesDiv.appendChild(cardDiv);
     }
 
-    function mostrarDetalleAnimal(animal) {
+    function mostrarDetalleAnimal(animal, imagenURL) {
         const modalBody = document.querySelector('.modal-body');
         modalBody.innerHTML = `
             <h5>${animal.getNombre()}</h5>
-            <p>Edad: ${animal.getEdad()}</p>
-            <p>Comentarios: ${animal.setComentarios()}</p>
+            <img src="${imagenURL}" alt="${animal.getNombre()}">
+            <p>Comentarios: ${animal.getComentarios()}</p>
         `;
 
         $('#exampleModal').modal('show');
     }
 })();
-
-
