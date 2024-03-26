@@ -27,6 +27,12 @@ import { obtenerImagenes } from './datos.js';
         return true;
     }
     //fin validación formulario
+    // Función para limpiar el formulario
+    function limpiarFormulario() {
+        document.querySelector('#animal').value = 'Seleccione un animal';
+        document.querySelector('#edad').value = 'Seleccione un rango de años';
+        document.querySelector('#comentarios').value = '';
+    }
 
     //Aqui manejamos los archivos desde el DOM y validamos el form al escuchar el evento click
     document.addEventListener('DOMContentLoaded', () => {
@@ -34,6 +40,7 @@ import { obtenerImagenes } from './datos.js';
         btnRegistrar.addEventListener('click', () => {
             if (validarFormulario()) {
                 registrarAnimal()
+                limpiarFormulario()//se agrega de la funcion limpiar formulario 
             }
         })
     });
