@@ -137,7 +137,7 @@ import { obtenerImagenes } from './datos.js';
         });
         //
 
-        // img.addEventListener('click', () => mostrarDetalleAnimal(animal, animal.getImg()))
+
 
         const cardBodyDiv = document.createElement('div')
         cardBodyDiv.classList.add('card-body')
