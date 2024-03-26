@@ -103,11 +103,41 @@ import { obtenerImagenes } from './datos.js';
         const cardDiv = document.createElement('div')
         cardDiv.classList.add('card', 'm-2')
 
+        //creamos un elemento 
+        const imgContainer = document.createElement('div');
+        imgContainer.classList.add('position-relative');
+
+        //
+
         const img = document.createElement('img')
         img.src = animal.getImg()
         img.classList.add('card-img-top')
 
-        img.addEventListener('click', () => mostrarDetalleAnimal(animal, animal.getImg()))
+        //creamos una contante speaker para poner un parlante
+        const speakerIcon = document.createElement('i');
+        speakerIcon.classList.add('fas', 'fa-volume-up', 'position-absolute', 'top-0', 'end-0', 'm-2', 'text-white', 'bg-dark', 'rounded-circle', 'p-1');
+        speakerIcon.style.cursor = 'pointer';
+
+        imgContainer.appendChild(img);
+        imgContainer.appendChild(speakerIcon);
+        cardDiv.appendChild(imgContainer);
+
+        imgContainer.addEventListener('click', () => {
+            mostrarDetalleAnimal(animal, animal.getImg());
+        });
+
+        speakerIcon.addEventListener('click', (event) => {
+            event.stopPropagation(); // Evita que el clic se propague al contenedor de la imagen
+            reproducirSonidoAnimal(animal.getSonido());
+        });
+
+        //evento click para mostrar la imagen del modal 
+        img.addEventListener('click', () => {
+            mostrarDetalleAnimal(animal, animal.getImg());
+        });
+        //
+
+        // img.addEventListener('click', () => mostrarDetalleAnimal(animal, animal.getImg()))
 
         const cardBodyDiv = document.createElement('div')
         cardBodyDiv.classList.add('card-body')
