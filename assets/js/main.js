@@ -48,6 +48,7 @@ import { obtenerImagenes } from './datos.js';
         switch (nombre) {
             case 'Leon':
                 animal = new Leon(nombre, edad, './assets/img/Leon.png', comentarios, './assets/sounds/rugido.mp3')
+                animal.setComentarios(comentarios);//comentarios para el modal
                 break;
 
             case 'Lobo':
@@ -104,6 +105,7 @@ import { obtenerImagenes } from './datos.js';
         const img = document.createElement('img')
         img.src = animal.getImg()
         img.classList.add('card-img-top')
+
         img.addEventListener('click', () => mostrarDetalleAnimal(animal, animal.getImg()))
 
         const cardBodyDiv = document.createElement('div')

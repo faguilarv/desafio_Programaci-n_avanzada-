@@ -1,50 +1,56 @@
 class Animal {
+    #nombre;
+    #edad;
+    #img;
+    #comentarios;
+    #sonido;
     constructor(nombre, edad, img, comentarios, sonido) {
-        this.nombre = nombre
-        this.edad = edad
-        this.img = img
-        this.comentarios = comentarios
-        this.sonido = sonido
+        this.#nombre = nombre
+        this.#edad = edad
+        this.#img = img
+        this.#comentarios = comentarios
+        this.#sonido = sonido
     }
 
-    getNombre() {
-        return this.nombre
+    getnombre() {
+        return this.#nombre
     }
     getEdad() {
-        return this.edad
+        return this.#edad
     }
     getImg() {
-        return this.img
-    }
-    setComentarios() {
-        this.comentarios = comentarios
-    }
-    getSonido() {
-        return this.sonido
+        return this.#img
     }
 
+    getComentarios() {
+        return this.#comentarios
+    }
+
+    setComentarios(comentarios) {
+        this.#comentarios = comentarios
+
+    }
+
+
+    getSonido() {
+        return this.#sonido;
+    }
 }
 class Leon extends Animal {
     constructor(nombre, edad, img, comentarios, sonido) {
-        //super(nombre, edad, img, comentarios, sonido)
         super(nombre, edad, img, comentarios, sonido)
-
-
     }
-    getComentarios() {
-        return this.comentarios
-    }
+
     rugir() {
-        //aqui se debiera reproducir el audio rugir del León
+        //aqui se debiera reproducir el audio aullar del lobo
     }
 }
+//lobo
 class Lobo extends Animal {
     constructor(nombre, edad, img, comentarios, sonido) {
         super(nombre, edad, img, comentarios, sonido)
     }
-    getComentarios() {
-        return this.comentarios
-    }
+
     aullar() {
         //aqui se debiera reproducir el audio aullar del lobo
     }
@@ -53,9 +59,7 @@ class Oso extends Animal {
     constructor(nombre, edad, img, comentarios, sonido) {
         super(nombre, edad, img, comentarios, sonido)
     }
-    getComentarios() {
-        return this.comentarios
-    }
+
     gruñir() {
 
     }
@@ -64,9 +68,7 @@ class Serpiente extends Animal {
     constructor(nombre, edad, img, comentarios, sonido) {
         super(nombre, edad, img, comentarios, sonido)
     }
-    getComentarios() {
-        return this.comentarios
-    }
+
     sisear() {
 
     }
@@ -75,9 +77,7 @@ class Aguila extends Animal {
     constructor(nombre, edad, img, comentarios, sonido) {
         super(nombre, edad, img, comentarios, sonido)
     }
-    getComentarios() {
-        return this.comentarios
-    }
+
     chillar() {
 
     }
