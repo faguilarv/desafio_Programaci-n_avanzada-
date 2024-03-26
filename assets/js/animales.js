@@ -12,7 +12,7 @@ class Animal {
         this.#sonido = sonido
     }
 
-    getnombre() {
+    getNombre() {
         return this.#nombre
     }
     getEdad() {
@@ -23,6 +23,7 @@ class Animal {
     }
 
     getComentarios() {
+
         return this.#comentarios
     }
 

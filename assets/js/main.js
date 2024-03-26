@@ -43,30 +43,24 @@ import { obtenerImagenes } from './datos.js';
         const edad = document.querySelector('#edad').value
         const comentarios = document.querySelector('#comentarios').value
 
-        //creamos la instancia, switchamos al animal  que seleccionemos para investigar
+        // Creamos la instancia y establecemos los comentarios
         let animal;
         switch (nombre) {
             case 'Leon':
                 animal = new Leon(nombre, edad, './assets/img/Leon.png', comentarios, './assets/sounds/rugido.mp3')
-                animal.setComentarios(comentarios);//comentarios para el modal
                 break;
-
             case 'Lobo':
                 animal = new Lobo(nombre, edad, './assets/img/lobo.jpg', comentarios, './assets/sounds/aullido.mp3')
                 break;
-
             case 'Oso':
                 animal = new Oso(nombre, edad, './assets/img/oso.jpg', comentarios, './assets/sounds/gruñido.mp3')
                 break;
-
             case 'Serpiente':
                 animal = new Serpiente(nombre, edad, './assets/img/serpiente.jpg', comentarios, './assets/sounds/siseo.mp3')
                 break;
-
             case 'Aguila':
                 animal = new Aguila(nombre, edad, './assets/img/aguila.png', comentarios, './assets/sounds/chillido.mp3')
                 break;
-
             default:
                 console.error('Seleccione un animal de la lista');
                 return;
@@ -130,9 +124,10 @@ import { obtenerImagenes } from './datos.js';
     function mostrarDetalleAnimal(animal, imagenURL) {
         const modalBody = document.querySelector('.modal-body');
         modalBody.innerHTML = `
-            <h5>${animal.getnombre()}</h5>
-            <img src="${imagenURL}" alt="${animal.getnombre()}">
+            <h5>${animal.getNombre()}</h5>
+            <img src="${imagenURL}" alt="${animal.getNombre()}">
             <p>Comentarios: ${animal.getComentarios()}</p>
+           
         `;
 
         $('#exampleModal').modal('show');
