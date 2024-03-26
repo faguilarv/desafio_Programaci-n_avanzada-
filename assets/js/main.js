@@ -130,8 +130,8 @@ import { obtenerImagenes } from './datos.js';
     function mostrarDetalleAnimal(animal, imagenURL) {
         const modalBody = document.querySelector('.modal-body');
         modalBody.innerHTML = `
-            <h5>${animal.getNombre()}</h5>
-            <img src="${imagenURL}" alt="${animal.getNombre()}">
+            <h5>${animal.getnombre()}</h5>
+            <img src="${imagenURL}" alt="${animal.getnombre()}">
             <p>Comentarios: ${animal.getComentarios()}</p>
         `;
 
